@@ -7,8 +7,8 @@ module.exports = function validateLoginInput(data) { //this is the same as an ar
     data.email = !isEmpty(data.email)? data.email : '';
     data.password = !isEmpty(data.password)? data.password : '';
 
-    if (!validator.isLength(data.password, {min: 6, max: 30})) {
-        errors.password = 'Password must be between 6 and 30 characters';
+    if (!validator.isLength(data.password, {min: 4, max: 30})) {
+        errors.password = 'Password must be between 4 and 30 characters';
     }
 
     if (validator.isEmpty(data.email)) {
