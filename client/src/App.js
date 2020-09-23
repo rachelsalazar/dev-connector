@@ -15,6 +15,7 @@ import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+<<<<<<< HEAD
 import Dashboard from './components/dashboard/Dashboard';
 import CreateProfile from './components/create-profile/CreateProfile';
 import EditProfile from './components/edit-profile/EditProfile';
@@ -48,6 +49,10 @@ if (localStorage.jwtToken) {
     window.location.href = '/login';
   }
 }
+=======
+import {Provider} from 'react-redux';
+import store from './store';
+>>>>>>> parent of fbf52ec... added redux for login
 
 class App extends Component {
   render() {

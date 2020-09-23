@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions/authActions';
 import TextFieldGroup from '../common/TextFieldGroup';
+=======
+import classnames from 'classnames';
+>>>>>>> parent of fbf52ec... added redux for login
 
 class Login extends Component {
   constructor() {
@@ -12,6 +16,7 @@ class Login extends Component {
       password: '',
       errors: {}
     }
+<<<<<<< HEAD
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -29,6 +34,10 @@ class Login extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push('/dashboard');
+=======
+    onChange(e){
+        this.setState({[e.target.name]:e.target.value});
+>>>>>>> parent of fbf52ec... added redux for login
     }
 
     if (nextProps.errors) {
@@ -36,12 +45,21 @@ class Login extends Component {
     }
   }
 
+<<<<<<< HEAD
   onSubmit(e){
     e.preventDefault();
 
     const currentUser = {
       email: this.state.email,
       password: this.state.password
+=======
+        const newUser = {
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password,
+            password2: this.state.password2
+        };
+>>>>>>> parent of fbf52ec... added redux for login
     }
 
     this.props.loginUser(currentUser);
@@ -86,6 +104,7 @@ class Login extends Component {
   }
 }
 
+<<<<<<< HEAD
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
@@ -98,3 +117,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, { loginUser })(Login);
+=======
+export default Login;
+>>>>>>> parent of fbf52ec... added redux for login

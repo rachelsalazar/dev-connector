@@ -17,6 +17,7 @@ export const registerUser = (userData, history) => dispatch => {
       ));
 };
 
+<<<<<<< HEAD
 // Login - Get User Token
 export const loginUser = userData => dispatch => {
   axios
@@ -32,6 +33,25 @@ export const loginUser = userData => dispatch => {
       const decoded = jwt_decode(token);
       // Set current user
       dispatch(setCurrentUser(decoded));
+=======
+export const loginUser = userdata => dispatch => {
+    axios
+    .post('/api/users/login', newUser)
+    .then(res => {
+        //Save to localstorage
+        const {token} = res.data;
+        //Set token to ls
+        localStorage.setItem('jwtToken', token);
+        //Set token to auth header
+        setAuthToken(token);
+        //Decode token to get user data
+        const decoded = jwt_decode(token);
+        //Set current user
+        dispatch({
+            type: SET_CURRENT_USER,
+            payload: decoded
+        })
+>>>>>>> parent of fbf52ec... added redux for login
     })
     .catch(err =>
       dispatch({
@@ -41,6 +61,7 @@ export const loginUser = userData => dispatch => {
     );
 };
 
+<<<<<<< HEAD
 // Set logged in user
 export const setCurrentUser = decoded => {
   return {
@@ -58,3 +79,6 @@ export const logoutUser = () => dispatch => {
   // Set current user to {} which will set isAuthenticated to false
   dispatch(setCurrentUser({}));
 };
+=======
+}
+>>>>>>> parent of fbf52ec... added redux for login
